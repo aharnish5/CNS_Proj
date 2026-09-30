@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cipher workbench</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>Cipher workbench</h1>
+    <p>Team 2 project: encrypt and decrypt with the Hill cipher or a one-time pad, with every calculation shown step by step.</p>
+  </header>
+
+  <nav class="nav">
+    <button class="navb on" data-view="hill">Hill cipher</button>
+    <button class="navb" data-view="otp">One-time pad</button>
+  </nav>
+
+  <div class="view" id="v-hill">
+  <div class="layout">
+    <section class="panel">
+      <div class="tabs">
+        <button class="tab on" data-mode="enc">Encrypt</button>
+        <button class="tab" data-mode="dec">Decrypt</button>
+      </div>
+
+      <label for="text" id="tl">Plaintext</label>
+      <textarea id="text" rows="3" spellcheck="false"></textarea>
+
+      <div class="hd">
+        <label>Key matrix</label>
+        <div class="sizes" id="sizes">
+          <button data-n="2">2×2</button>
+          <button data-n="3" class="on">3×3</button>
+          <button data-n="4">4×4</button>
+        </div>
+      </div>
+      <div id="grid" class="mg keygrid"></div>
+      <div id="status" class="badge"></div>
+
+      <div class="actions">
+        <button class="ghost" id="rand">Random key</button>
+        <button class="ghost" id="clear">Clear</button>
+        <button class="go" id="go">Encrypt</button>
+      </div>
+    </section>
+
+    <section id="out" class="out" aria-live="polite"></section>
+  </div>
+  </div>
+
+  <div class="view" id="v-otp" hidden>
+  <div class="layout">
+    <section class="panel">
+      <div class="tabs">
+        <button class="otab on" data-mode="enc">Encrypt</button>
+        <button class="otab" data-mode="dec">Decrypt</button>
+      </div>
+      <label for="otext" id="otl">Plaintext</label>
+      <textarea id="otext" rows="3" spellcheck="false"></textarea>
+      <label for="okey">Key</label>
+      <textarea id="okey" rows="3" spellcheck="false" placeholder="Same length as the message, or leave empty when encrypting for a random key"></textarea>
+      <div id="ostatus" class="badge"></div>
+      <div class="actions">
+        <button class="ghost" id="orand">Random key</button>
+        <button class="ghost" id="oclear">Clear</button>
+        <button class="go" id="ogo">Encrypt</button>
+      </div>
+    </section>
+    <section id="oout" class="out" aria-live="polite"></section>
+  </div>
+  </div>
+
+  <section class="team">
+    <h2>Team 2</h2>
+    <p>Topics: Hill cipher and one-time pad</p>
+    <div class="members">
+      <div class="mem"><span class="av">AH</span>Adithya H</div>
+      <div class="mem"><span class="av">AM</span>Aditi Maindola</div>
+      <div class="mem"><span class="av">AM</span>Aditya Mittal</div>
+      <div class="mem"><span class="av">AK</span>Advaith Kashyap</div>
+      <div class="mem"><span class="av">AD</span>Aharnish Dubey</div>
+      <div class="mem"><span class="av">AJ</span>Ahlam Javeria</div>
+    </div>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
